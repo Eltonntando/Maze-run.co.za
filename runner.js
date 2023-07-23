@@ -711,38 +711,7 @@ function gpATimer(adir) {
 
 
 
-//Navigate with swipe
-let lasttouchpY = 0;
-let lasttouchpX = 0;
-cont.addEventListener("touchstart", (e) => {
-    lasttouchpY = e.changedTouches[0].pageY;
-    lasttouchpX = e.changedTouches[0].pageX;
-});
 
-cont.addEventListener("touchmove", (e) => {
-    e.preventDefault();
-    //console.log("touch " + e.changedTouches[0].pageY);
-    let diffY = e.changedTouches[0].pageY - lasttouchpY;
-    let diffX = e.changedTouches[0].pageX - lasttouchpX;
-    if (diffY > sThreshold) {
-        down();
-        lasttouchpY = e.changedTouches[0].pageY;
-    } else {
-        if (diffY < -1 * sThreshold) {
-            up();
-            lasttouchpY = e.changedTouches[0].pageY;
-        }
-    }
-    if (diffX > sThreshold) {
-        right();
-        lasttouchpX = e.changedTouches[0].pageX;
-    } else {
-        if (diffX < -1 * sThreshold) {
-            left();
-            lasttouchpX = e.changedTouches[0].pageX;
-        }
-    }
-});
 
 var timer;
 var ele = document.getElementById('timer');
