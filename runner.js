@@ -744,50 +744,6 @@ cont.addEventListener("touchmove", (e) => {
     }
 });
 
-//Navigate with scrolling
-let lastscrollpY = 0;
-let lastscrollpX = 0;
-cont.addEventListener("wheel", (e) => {
-    //console.log("scrollY: " + e.deltaY + " scrollX: " + e.deltaX);
-
-    //handle Y scrolling
-    lastscrollpY = lastscrollpY + e.deltaY;
-    if (lastscrollpY > 0 && e.deltaY < 0) {
-        lastscrollpY = 0;
-    }
-    if (lastscrollpY < 0 && e.deltaY > 0) {
-        lastscrollpY = 0;
-    }
-
-    if (lastscrollpY > scThreshold) {
-        up();
-        lastscrollpY = 0;
-    }
-        if (lastscrollpY < (-1 * scThreshold)) {
-        down();
-        lastscrollpY = 0;
-    }
-    
-    //handle X scrolling
-    lastscrollpX = lastscrollpX + e.deltaX;
-    if (lastscrollpX > 0 && e.deltaX < 0) {
-        lastscrollpX = 0;
-    }
-    if (lastscrollpX < 0 && e.deltaX > 0) {
-        lastscrollpX = 0;
-    }
-
-    if (lastscrollpX > scThreshold) {
-        left();
-        lastscrollpX = 0;
-    }
-        if (lastscrollpX < (-1 * scThreshold)) {
-        right();
-        lastscrollpX = 0;
-    }
-});
-
-
 var timer;
 var ele = document.getElementById('timer');
 
