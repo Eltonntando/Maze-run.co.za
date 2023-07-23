@@ -1,6 +1,8 @@
 body {
     touch-action: pan-y;
     background-image: url(Images/Maze-Background3.png);
+    height: 100%;
+    scroll-behavior: auto;
 }
 #container {
     position: absolute;
