@@ -412,27 +412,27 @@ function updateEmo(lr) {
             emo.innerHTML = "🙄";
         }
         if (thingie.offsetLeft < maxl - 2 * step) {
-            emo.innerHTML = "😒";
+            emo.innerHTML = "😕";
         }
         if (thingie.offsetLeft < maxl - 4 * step) {
-            emo.innerHTML = "😣";
+            emo.innerHTML = "😬";
         }
         if (thingie.offsetLeft < maxl - 6 * step) {
-            emo.innerHTML = "🤬";
+            emo.innerHTML = "💩";
         }
         if (thingie.offsetLeft > prevl) {
             emo.innerHTML = "😐";
         }
         if (thingie.offsetLeft >= maxl) {
             if (thingie.offsetLeft > mazeWidth * 0.6) {
-                emo.innerHTML = "😀";
+                emo.innerHTML = "😁";
             } else {
-                emo.innerHTML = "🙂";
+                emo.innerHTML = "😳";
             }
             maxl = thingie.offsetLeft;
         }
         if (thingie.offsetLeft === 0) {
-            emo.innerHTML = "😢";
+            emo.innerHTML = "😱";
         }
         if (
             thingie.offsetLeft > mazeWidth - step &&
@@ -467,7 +467,7 @@ function updateEmo(lr) {
     //     //dynamic stuff
     //     if (dist <= prevDist) {
     //         //happy
-    //         emo.innerHTML = "😀";
+    //         emo.innerHTML = "😁";
     //     } else {
     //         //sad
     //         emo.innerHTML = "🙄";
