@@ -487,44 +487,7 @@ function updateEmo(lr) {
     //     prevDist = dist;
 }
 
-//navigate with tilting
-window.addEventListener("deviceorientation", handleOrientation);
 
-function tiltTimer() {
-    allowTilt = false;
-    setTimeout(() => {
-        allowTilt = true;
-    }, "200");
-}
-
-function handleOrientation(e) {
-    //up/down = beta (smaller = up)
-    //left/right = gamma (neg = left)
-
-    if (firstMove) {
-        lastUD = e.beta;
-        lastLR = e.gamma;
-        firstMove = false;
-    }
-    if (allowTilt) {
-        if (e.beta < lastUD - mThreshold) {
-            up();
-            tiltTimer();
-        }
-        if (e.beta > lastUD + mThreshold) {
-            down();
-            tiltTimer();
-        }
-        if (e.gamma < lastLR - mThreshold) {
-            left();
-            tiltTimer();
-        }
-        if (e.gamma > lastLR + mThreshold) {
-            right();
-            tiltTimer();
-        }
-    }
-}
 
 //navigate with controller
 let haveEvents = "ongamepadconnected" in window;
