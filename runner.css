@@ -1,9 +1,11 @@
 body {
     touch-action: pan-y;
-    background-image: url(Images/Maze-Background3.png);
+    background-color: black;
     height: 100%;
     scroll-behavior: auto;
 }
+
+
 #container {
     position: absolute;
     top: 0;
@@ -26,7 +28,6 @@ body {
     top: 40vh;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-image: url(Images/Maze-grid-back.png);
     border-radius: 30px;
     margin-bottom: 0%;
 
@@ -65,7 +66,7 @@ body {
     cursor: pointer;
     border-radius: 30px;
     display: grid;
-    /*box-shadow: 4px 4px 10px rgba(255, 255, 255, 0.2);*/
+    font-size: 100px;    /*box-shadow: 4px 4px 10px rgba(255, 255, 255, 0.2);*/
 }
 .chevron {
     height: 20px;
@@ -129,14 +130,14 @@ body {
     top: 20px;
     left: 20px;
     width: 300px;
-    height: 7px;
+    height: 2px;
 }
 
 #bottom {
     top: 220px;
     left: 20px;
     width: 302px;
-    height: 7px;
+    height: 2px;
 }
 
 /*style reset*/
