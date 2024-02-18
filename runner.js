@@ -690,3 +690,77 @@ var ele = document.getElementById('timer');
 function pause(){
     clearInterval(timer);
 }
+
+
+
+
+// ... Your existing JavaScript code ...
+
+var timer;
+var timeLeft = 100; // Initial time in seconds
+
+// Start the timer
+function startTimer() {
+    timer = setInterval(function () {
+        timeLeft--;
+        document.getElementById('timer').innerHTML = 'Timer: ' + timeLeft;
+
+        if (timeLeft <= 0) {
+            clearInterval(timer);
+            showPopup('You LOOSE!');
+        }
+    }, 1000); // Update every 1 second
+}
+
+// Check for win condition
+function checkWin() {
+    var playerLeft = thingie.offsetLeft;
+    var playerTop = thingie.offsetTop;
+    var homeLeft = home.offsetLeft;
+    var homeTop = home.offsetTop;
+
+    if (playerLeft === homeLeft && playerTop === homeTop) {
+        clearInterval(timer);
+        showPopup('You WIN!');
+    }
+}
+
+// Show a popup message
+function showPopup(message) {
+    alert(message);
+}
+
+// ... Your existing JavaScript code ...
+
+// Call startTimer() when your game starts (e.g., after generating the maze)
+startTimer();
+
+// Call checkWin() every time the player moves
+function up() {
+    animKeys(bu);
+    if (checkYboundry("u")) {
+        thingie.style.top = thingie.offsetTop - step + "px";
+        updateEmo(false);
+        checkWin();
+    }
+}
+
+// ... Repeat for other directions (down, left, right) ...
+
+// Modify updateEmo function to include the win condition
+function updateEmo(lr) {
+    if (lr) {
+        // ... Your existing code ...
+
+        if (thingie.offsetLeft >= mazeWidth) {
+            emo.innerHTML = "";
+            home.innerHTML = "🥳";
+            showPopup('You WIN! at ' + (100 - timeLeft) + ' seconds!');
+        }
+
+
+        // ... Your existing code ...
+    } else {
+        // ... Your existing code ...
+    }
+}
