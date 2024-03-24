@@ -16,12 +16,17 @@ body {
     grid-template-rows: 60% 40%;
 }
 
+.music{
+  margin-left: 50%;
+  margin-top: -155px;
+}
+
 #maze {
     position: absolute;
     width: 340px;
     height: 240px;
     /*background: #39a;
-    
+
     align-self: center;
     justify-self: center;
     place-self: center center;*/
